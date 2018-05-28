@@ -33333,5 +33333,206 @@
             "Protection": 29,
             "activation": 25
         }
+    },
+    {
+        "name": "Qi'ra",
+        "uniqueName": "QIRA",
+        "aliases": [
+            "Qi'ra"
+        ],
+        "nameVariant": [
+            "Qi'ra"
+        ],
+        "url": "https://swgoh.gg/characters/qira/",
+        "avatarURL": "https://swgoh.gg/static/img/assets/tex.charui_qira.png",
+        "side": "light",
+        "factions": [
+            "Scoundrel",
+            "Support"
+        ],
+        "mods": {},
+        "legacyMods": {},
+        "gear": {
+            "Gear 1": [
+                "Mk 1 Nubian Security Scanner",
+                "Mk 1 TaggeCo Holo Lens",
+                "Mk 1 TaggeCo Holo Lens",
+                "Mk 1 CEC Fusion Furnace",
+                "Mk 1 Loronar Power Cell",
+                "Mk 1 Neuro-Saav Electrobinoculars"
+            ],
+            "Gear 2": [
+                "Mk 3 BlasTech Weapon Mod",
+                "Mk 2 Neuro-Saav Electrobinoculars",
+                "Mk 2 Neuro-Saav Electrobinoculars",
+                "Mk 1 Merr-Sonn Shield Generator",
+                "Mk 2 Nubian Security Scanner",
+                "Mk 2 Neuro-Saav Electrobinoculars"
+            ],
+            "Gear 3": [
+                "Mk 3 BioTech Implant",
+                "Mk 3 BioTech Implant",
+                "Mk 2 Chedak Comlink",
+                "Mk 4 Loronar Power Cell",
+                "Mk 5 BlasTech Weapon Mod",
+                "Mk 1 Merr-Sonn Thermal Detonator"
+            ],
+            "Gear 4": [
+                "Mk 3 BioTech Implant",
+                "Mk 5 BAW Armor Mod",
+                "Mk 4 Fabritech Data Pad",
+                "Mk 1 Merr-Sonn Thermal Detonator",
+                "Mk 6 BAW Armor Mod",
+                "Mk 4 Nubian Security Scanner"
+            ],
+            "Gear 5": [
+                "Mk 3 BioTech Implant",
+                "Mk 2 Czerka Stun Cuffs",
+                "Mk 1 Zaltin Bacta Gel",
+                "Mk 3 BioTech Implant",
+                "Mk 5 BlasTech Weapon Mod",
+                "Mk 4 Merr-Sonn Thermal Detonator"
+            ],
+            "Gear 6": [
+                "Mk 3 Sienar Holo Projector",
+                "Mk 3 Chiewab Hypo Syringe",
+                "Mk 4 Arakyd Droid Caller",
+                "Mk 4 A/KT Stun Gun",
+                "Mk 1 Carbanti Sensor Array",
+                "Mk 4 CEC Fusion Furnace"
+            ],
+            "Gear 7": [
+                "Mk 3 Chiewab Hypo Syringe",
+                "Mk 4 Arakyd Droid Caller",
+                "Mk 4 SoroSuub Keypad",
+                "Mk 8 TaggeCo Holo Lens",
+                "Mk 5 Chiewab Hypo Syringe",
+                "Mk 6 BioTech Implant"
+            ],
+            "Gear 8": [
+                "Mk 4 Chiewab Hypo Syringe",
+                "Mk 4 Arakyd Droid Caller",
+                "Mk 5 SoroSuub Keypad",
+                "Mk 5 Chiewab Hypo Syringe",
+                "Mk 7 TaggeCo Holo Lens",
+                "Mk 5 CEC Fusion Furnace"
+            ],
+            "Gear 9": [
+                "Mk 2 Merr-Sonn Shield Generator",
+                "Mk 8 Fabritech Data Pad",
+                "Mk 2 Czerka Stun Cuffs",
+                "Mk 5 CEC Fusion Furnace",
+                "Mk 7 Nubian Security Scanner",
+                "Mk 6 Nubian Design Tech"
+            ],
+            "Gear 10": [
+                "Mk 3 Carbanti Sensor Array",
+                "Mk 5 A/KT Stun Gun",
+                "Mk 5 CEC Fusion Furnace",
+                "Mk 5 Merr-Sonn Thermal Detonator",
+                "Mk 8 BioTech Implant",
+                "Mk 5 Merr-Sonn Thermal Detonator"
+            ],
+            "Gear 11": [
+                "Mk 5 A/KT Stun Gun",
+                "Mk 5 A/KT Stun Gun",
+                "Mk 5 Merr-Sonn Thermal Detonator",
+                "Mk 8 BioTech Implant",
+                "Mk 4 Sienar Holo Projector",
+                "Mk 6 A/KT Stun Gun"
+            ],
+            "Gear 12": [
+                "Mk 12 ArmaTek Bayonet",
+                "Mk 12 ArmaTek Medpac",
+                "Mk 12 ArmaTek Bayonet",
+                "Unknown Gear",
+                "Unknown Gear",
+                "Unknown Gear"
+            ]
+        },
+        "abilities": {
+            "Deadly Double": {
+                "type": "Basic",
+                "abilityCooldown": "0",
+                "abilityDesc": "Deal Physical damage to target enemy twice and inflict Offense Down for 2 turns. This attack can't be Countered. If this attack scores a Critical Hit, also Daze them for 1 turn, and if both hits are Critical, deal bonus damage equal to 10% of the target's Max Health.",
+                "tier": "omega",
+                "cost": {
+                    "mk3": 24,
+                    "omega": 5,
+                    "zeta": 0
+                }
+            },
+            "Scattering Blast": {
+                "type": "Special",
+                "abilityCooldown": "3",
+                "abilityDesc": "Dispel all buffs on target enemy, then deal Physical damage to all enemies and Stagger them for 2 turns. This attack deals 25% more damage per buffed enemy.",
+                "tier": "omega",
+                "cost": {
+                    "mk3": 19,
+                    "omega": 5,
+                    "zeta": 0
+                }
+            },
+            "Joint Operation": {
+                "type": "Special",
+                "abilityCooldown": "4",
+                "abilityDesc": "Deal Physical damage to target enemy and call another target ally to Assist. If that ally is a Scoundrel, both attacks deal 30% more damage. Each attack has a 50% chance to Expose the target for 2 turns, even if the target Evades.",
+                "tier": "omega",
+                "cost": {
+                    "mk3": 19,
+                    "omega": 5,
+                    "zeta": 0
+                }
+            },
+            "Tools of the Trade": {
+                "type": "Leader",
+                "abilityCooldown": "0",
+                "abilityDesc": "Scoundrel allies have +20% Critical Chance. In addition, whenever they score a Critical Hit, they recover 10% Protection and gain an additional bonus based on their Role for the rest of the battle.",
+                "tier": "omega",
+                "cost": {
+                    "mk3": 16,
+                    "omega": 5,
+                    "zeta": 0
+                }
+            },
+            "Insult to Injury": {
+                "type": "Unique",
+                "abilityCooldown": "0",
+                "abilityDesc": "While attacking, Qi'ra has +40% Potency if her target isn't debuffed and +30% Critical Damage if it is. Other Scoundrel allies gain half these benefits while attacking. In addition, at the end of each turn, if any single enemy suffered more than one Critical Hit this turn, Qi'ra becomes Prepared and gains 15% Turn Meter and Health Steal Up for 1 turn. Each other ally that used an ability this turn also gains Health Steal Up for 1 turn.",
+                "tier": "zeta",
+                "cost": {
+                    "mk3": 46,
+                    "omega": 13,
+                    "zeta": 20
+                }
+            }
+        },
+        "shardLocations": {
+            "dark": [],
+            "light": [],
+            "cantina": [],
+            "shops": []
+        },
+        "stats": {
+            "Power": 20713,
+            "Strength": 972,
+            "Agility": 965,
+            "Intelligence": 605,
+            "Speed": 142,
+            "Physical Damage": 2644,
+            "Physical Critical Rating": 756,
+            "Special Damage": 1473,
+            "Special Critical Rating": 0,
+            "Armor Penetration": 160,
+            "Resistance Penetration": 0,
+            "Potency": 28,
+            "Health": 27746,
+            "Armor": 256,
+            "Resistance": 100,
+            "Tenacity": 41,
+            "Health Steal": 15,
+            "Protection": 32,
+            "activation": 25
+        }
     }
 ]
