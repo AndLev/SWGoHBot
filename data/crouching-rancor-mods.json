@@ -1,6 +1,10 @@
 {
     "generatedAt": {
+<<<<<<< HEAD
         "date": "2018-05-25 20:00:01.000000",
+=======
+        "date": "2018-05-26 20:00:01.000000",
+>>>>>>> upstream/master
         "timezone_type": 3,
         "timezone": "UTC"
     },
