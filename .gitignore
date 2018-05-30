@@ -14,3 +14,4 @@ package-lock.json
 /commands/boom.js
 /commands/test.js
 
+.DS_Store

@@ -79,7 +79,7 @@ module.exports = class extends Language {
             BASE_EVENT_STARTING_IN_MSG: (key, timeToGo) => `**${key}**\nНачало в ${timeToGo}`,
 
             // Base swgohAPI
-            BASE_SWGOH_NO_ALLY: `Дааный пользователь не зарегистрирован. Зарегистрируйтесь командой \`;register add <user> <allycode>\``,
+            BASE_SWGOH_NO_ALLY: `Данный пользователь не зарегистрирован. Зарегистрируйтесь командой \`;register add <user> <allycode>\``,
             BASE_SWGOH_NOT_REG: (user) => `Дааный пользователь не зарегистрирован. Зарегистрируйтесь командой \`;register add @${user} <allycode>\``,
             BASE_SWGOH_NO_USER: `Этот пользователь не зарегистрирован ни в одном списке.`,
             BASE_SWGOH_MISSING_CHAR: 'Для поиска введите символ',
@@ -104,87 +104,97 @@ module.exports = class extends Language {
             },
 
             // Abilities Command 
-            COMMAND_ABILITIES_NEED_CHARACTER: (prefix, usage) => `Need a character. Usage is \`${prefix}${usage}\``,
-            COMMAND_ABILITIES_INVALID_CHARACTER: (prefix, usage) => `Invalid character. Usage is \`${prefix}${usage}\``,
-            COMMAND_ABILITIES_COOLDOWN: (aCooldown) => `**Ability Cooldown:** ${aCooldown}\n`,
-            COMMAND_ABILITIES_ABILITY: (aType, mat, cdString, aDesc) => `**Ability Type:** ${aType}     **Max ability mat needed:**  ${mat}\n${cdString}${aDesc}`,
-            COMMAND_ABILITIES_ABILITY_CODE: (abilityName, type, tier, aDesc) => `### ${abilityName} ###\n* Ability type: ${type}\n* Max ability mat needed: ${tier}\n* Description: ${aDesc}\n\n`,
+            COMMAND_ABILITIES_NEED_CHARACTER: (prefix, usage) => `Нужен символ. Использование \`${prefix}${usage}\``,
+            COMMAND_ABILITIES_INVALID_CHARACTER: (prefix, usage) => `Неправильный символ. Использование \`${prefix}${usage}\``,
+            COMMAND_ABILITIES_COOLDOWN: (aCooldown) => `**Перезарядка способности:** ${aCooldown}\n`,
+            COMMAND_ABILITIES_ABILITY: (aType, mat, cdString, aDesc) => `**Тип способности:** ${aType}     **Нужно для максимума:**  ${mat}\n${cdString}${aDesc}`,
+            COMMAND_ABILITIES_ABILITY_CODE: (abilityName, type, tier, aDesc) => `### ${abilityName} ###\n* Тип способности: ${type}\n* Нужно для максимума: ${tier}\n* Описание: ${aDesc}\n\n`,
             COMMAND_ABILITIES_HELP: {
-                description: "Shows the abilities for the specified character.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';abilities <characterName>',
-                    args: {}
-                }]
+                description: "Показывает способности выбранного персонажа.",
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';abilities <characterName>',
+                        args: {}
+                    }
+                ]
             },
 
             // Activities Command
-            COMMAND_ACTIVITIES_SUNDAY: `== Before Reset == \nComplete Arena Battles \nSave Cantina Energy \nSave Normal Energy\n\n== After Reset == \nSpend Cantina Energy \nSave Normal Energy`,
-            COMMAND_ACTIVITIES_MONDAY: `== Before Reset == \nSpend Cantina Energy \nSave Normal Energy \nSave Galactic War (unless reset available)\n\n== After Reset == \nSpend Normal Energy on Light Side Battles \nSave Galactic War (unless reset available)`,
-            COMMAND_ACTIVITIES_TUESDAY: `== Before Reset == \nSpend Normal Energy on Light Side Battles \nSave Galactic War\n\n== After Reset == \nComplete Galactic War Battles \nSave Normal Energy`,
-            COMMAND_ACTIVITIES_WEDNESDAY: `== Before Reset == \nComplete Galactic War Battles \nSave Normal Energy\n\n== After Reset == \nSpend Normal Energy on Hard Mode Battles`,
-            COMMAND_ACTIVITIES_THURSDAY: `== Before Reset == \nSpend Normal Energy on Hard Mode Battles \nSave Challenges\n\n== After Reset == \nComplete Challenges \nSave Normal Energy`,
-            COMMAND_ACTIVITIES_FRIDAY: `== Before Reset == \nComplete Challenges \nSave Normal Energy\n\n== After Reset == \nSpend Normal Energy on Dark Side Battles`,
-            COMMAND_ACTIVITIES_SATURDAY: `== Before Reset == \nSpend Normal Energy on Dark Side Battles \nSave Arena Battles \nSave Cantina Energy\n\n== After Reset == \nComplete Arena Battles \nSave Cantina Energy`,
-            COMMAND_ACTIVITIES_ERROR: (prefix, usage) => `Invalid day, usage is \`${prefix}${usage}\``,
+            COMMAND_ACTIVITIES_SUNDAY: `== До сброса == \nComplete Arena Battles \nSave Cantina Energy \nSave Normal Energy\n\n== После сброса == \nSpend Cantina Energy \nSave Normal Energy`,
+            COMMAND_ACTIVITIES_MONDAY: `== До сброса == \nSpend Cantina Energy \nSave Normal Energy \nSave Galactic War (unless reset available)\n\n== После сброса == \nSpend Normal Energy on Light Side Battles \nSave Galactic War (unless reset available)`,
+            COMMAND_ACTIVITIES_TUESDAY: `== До сброса == \nSpend Normal Energy on Light Side Battles \nSave Galactic War\n\n== После сброса == \nComplete Galactic War Battles \nSave Normal Energy`,
+            COMMAND_ACTIVITIES_WEDNESDAY: `== До сброса == \nComplete Galactic War Battles \nSave Normal Energy\n\n== После сброса == \nSpend Normal Energy on Hard Mode Battles`,
+            COMMAND_ACTIVITIES_THURSDAY: `== До сброса == \nSpend Normal Energy on Hard Mode Battles \nSave Challenges\n\n== После сброса == \nComplete Challenges \nSave Normal Energy`,
+            COMMAND_ACTIVITIES_FRIDAY: `== До сброса == \nComplete Challenges \nSave Normal Energy\n\n== После сброса == \nSpend Normal Energy on Dark Side Battles`,
+            COMMAND_ACTIVITIES_SATURDAY: `== До сброса == \nSpend Normal Energy on Dark Side Battles \nSave Arena Battles \nSave Cantina Energy\n\n== После сброса == \nComplete Arena Battles \nSave Cantina Energy`,
+            COMMAND_ACTIVITIES_ERROR: (prefix, usage) => `Неправильно указан день, использование \`${prefix}${usage}\``,
             COMMAND_ACTIVITIES_HELP: {
-                description: "Shows the daily guild activites.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';activities [dayOfWeek]',
-                    args: {}
-                }]
+                description: "Показывает дневные задачи гильдии.",
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';activities [dayOfWeek]',
+                        args: {}
+                    }
+                ]
             },
 
             // Arenarank Command
-            COMMAND_ARENARANK_INVALID_NUMBER: `Вы должны ввести действительный номер ранга`,
-            COMMAND_ARENARANK_BEST_RANK: `Вы достигли возможного, поздравляю!`,
-            COMMAND_ARENARANK_RANKLIST: (currentRank, battleCount, plural, est, rankList) => `From rank ${currentRank}, in ${battleCount} battle${plural} ${est}\nThe best you can get is ${rankList}`,
+            COMMAND_ARENARANK_INVALID_NUMBER: `Необходимо ввести правильный ранг`,
+            COMMAND_ARENARANK_BEST_RANK: `Поздравляем, вы добились максимума для себя!`,
+            COMMAND_ARENARANK_RANKLIST: (currentRank, battleCount, plural, est, rankList) => `От ранга ${currentRank}, до ${battleCount} боя${plural} ${est}\nЛучшее чего можно достичь ${rankList}`,
             COMMAND_ARENARANK_HELP: {
-                description: "Shows the (approximate) highest rank you can get if you win every arena battle.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';arenarank <currentRank>',
-                    args: {}
-                }]
+                description: "приблизительно показывает высший ранг которого вы можете достичь если выиграете все бои.",
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';arenarank <currentRank>',
+                        args: {}
+                    }
+                ]
             },
 
             // Challenges Command
-            COMMAND_CHALLENGES_TRAINING: "Training Droids",
-            COMMAND_CHALLENGES_ABILITY: "Ability Mats",
-            COMMAND_CHALLENGES_BOUNTY: "Bounty Hunter",
-            COMMAND_CHALLENGES_AGILITY: "Agility Gear",
-            COMMAND_CHALLENGES_STRENGTH: "Strength Gear",
-            COMMAND_CHALLENGES_TACTICS: "Tactics Gear",
+            COMMAND_CHALLENGES_TRAINING: "Тренировочные дроиды",
+            COMMAND_CHALLENGES_ABILITY : "Осколки способностей",
+            COMMAND_CHALLENGES_BOUNTY  : "Bounty Hunter",  
+            COMMAND_CHALLENGES_AGILITY : "Agility Gear",   
+            COMMAND_CHALLENGES_STRENGTH: "Strength Gear",  
+            COMMAND_CHALLENGES_TACTICS : "Tactics Gear",   
             COMMAND_CHALLENGES_SHIP_ENHANCEMENT: "Ship Enhancement Droids",
-            COMMAND_CHALLENGES_SHIP_BUILDING: "Ship Building Materials",
-            COMMAND_CHALLENGES_SHIP_ABILITY: "Ship Ability Materials",
+            COMMAND_CHALLENGES_SHIP_BUILDING   : "Ship Building Materials",
+            COMMAND_CHALLENGES_SHIP_ABILITY    : "Ship Ability Materials",
             COMMAND_CHALLENGES_MISSING_DAY: 'You need to specify a day',
             COMMAND_CHALLENGES_DEFAULT: (prefix, usage) => `Invalid date, usage is \`${prefix}${usage}\``,
             COMMAND_CHALLENGES_HELP: {
                 description: "Shows the daily guild challenges.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';challenges <dayOfWeek>',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';challenges <dayOfWeek>',
+                        args: {}
+                    }
+                ]
             },
 
             // Changelog Command (Help)
             COMMAND_CHANGELOG_HELP: {
                 description: "Adds a changelog to the db, and sends it to the changelog channel.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'changelog <message>',
-                    args: {
-                        "message": "Use [Updated], [Fixed], [Removed], and [Added] to organize the changes."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'changelog <message>',
+                        args: {
+                            "message": "Use [Updated], [Fixed], [Removed], and [Added] to organize the changes."
+                        }
                     }
-                }]
+                ]
             },
 
             // Character gear Command
@@ -194,12 +204,14 @@ module.exports = class extends Language {
             COMMAND_CHARGEAR_GEAR_NA: 'This gear has not been entered yet',
             COMMAND_CHARACTERGEAR_HELP: {
                 description: "Shows the gear requirements for the specified character/ lvl.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'charactergear <character> [gearLvl]',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'charactergear <character> [gearLvl]',
+                        args: {}
+                    }
+                ]
             },
 
             // CharacterMods Command
@@ -234,26 +246,30 @@ module.exports = class extends Language {
             COMMAND_CHARMODS_LAST_UPDATED: (lastUpdated) => `Mods last updated: ${lastUpdated} ago`,
             COMMAND_CHARMODS_HELP: ({
                 description: "Shows the mods that you have equipped on the selected character.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';charactermods [user] <character>',
-                    args: {
-                        "user": "The person you're adding. (me | userID | mention)",
-                        "character": "The character you want to search for."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';charactermods [user] <character>',
+                        args: {
+                            "user": "The person you're adding. (me | userID | mention)",
+                            "character": "The character you want to search for."
+                        }
                     }
-                }]
+                ]
             }),
 
             // Command Report Command
             COMMAND_COMMANDREPORT_HELP: ({
                 description: "Shows a list of all the commands that have been run in the last 10 days.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';commandreport',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';commandreport',
+                        args: {}
+                    }
+                ]
             }),
 
             // Current Events Command
@@ -261,14 +277,16 @@ module.exports = class extends Language {
             COMMAND_CURRENTEVENTS_DESC: (num) => `Next ${num} events.\nNote: *Dates are subject to change.*`,
             COMMAND_CURRENTEVENTS_HELP: {
                 description: "Shows any upcoming events.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';currentevents [num]',
-                    args: {
-                        "num": "The max number of events you want to show"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';currentevents [num]',
+                        args: {
+                            "num": "The max number of events you want to show"
+                        }
                     }
-                }]
+                ]
             },
 
             // Event Command (Create)
@@ -289,7 +307,7 @@ module.exports = class extends Language {
             COMMAND_EVENT_PAST_DATE: (eventDATE, nowDATE) => `You cannot set an event in the past. ${eventDATE} is before ${nowDATE}`,
             COMMAND_EVENT_CREATED: (eventName, eventDate) => `Event \`${eventName}\` created for ${eventDate}`,
             COMMAND_EVENT_NO_CREATE: `I couldn't set that event, please try again.`,
-            COMMAND_EVENT_TOO_BIG: (charCount) => `Sorry, but either your event's name or message is too big. Please trim it down by at least ${charCount} characters.`,
+            COMMAND_EVENT_TOO_BIG:(charCount) => `Sorry, but either your event's name or message is too big. Please trim it down by at least ${charCount} characters.`,
 
             // Event Command (View)
             COMMAND_EVENT_TIME: (eventName, eventDate) => `**${eventName}** \n\nEvent Time: ${eventDate}\n`,
@@ -314,7 +332,8 @@ module.exports = class extends Language {
             // Event Command (Help)
             COMMAND_EVENT_HELP: {
                 description: "Used to make, check, or delete an event.",
-                actions: [{
+                actions: [
+                    {
                         action: "Create",
                         actionDesc: 'Create a new event listing',
                         usage: ';event create <eventName> <eventDay> <eventTime> [eventMessage]',
@@ -354,28 +373,32 @@ module.exports = class extends Language {
             COMMAND_FACTION_CODE_OUT: (searchName, charString) => `# Characters in the ${searchName} faction # \n${charString}`,
             COMMAND_FACTION_HELP: {
                 description: "Shows the list of characters in the specified faction.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'faction <faction>',
-                    args: {
-                        "faction": "The faction you want to see the roster of. \nKeep in mind, this is as shown in game, so it's rebel, not rebels"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'faction <faction>',
+                        args: {
+                            "faction": "The faction you want to see the roster of. \nKeep in mind, this is as shown in game, so it's rebel, not rebels"
+                        }
                     }
-                }]
+                ]
             },
 
             // Guilds Command
             COMMAND_GUILDS_MORE_INFO: 'For more info on a specific guild:',
             COMMAND_GUILDS_HELP: {
                 description: "Shows the top guilds and everyone that's registered in yours.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';guild [user]',
-                    args: {
-                        "user": "A way to identify the guild. (mention | allyCode | guildName)"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';guild [user]',
+                        args: {
+                            "user": "A way to identify the guild. (mention | allyCode | guildName)"
+                        }
                     }
-                }]
+                ]
             },
 
             // GuildSearch Command
@@ -383,22 +406,24 @@ module.exports = class extends Language {
             COMMAND_GUILDSEARCH_MISSING_CHAR: 'You need to enter a character to check for',
             COMMAND_GUILDSEARCH_NO_RESULTS: (character) => `I did not find any results for ${character}`,
             COMMAND_GUILDSEARCH_CHAR_LIST: (chars) => `Your search came up with too many results, please be more specific. \nHere's a list of the close matches.\n\`\`\`${chars}\`\`\``,
-            COMMAND_GUILDSEARCH_FIELD_HEADER: (tier, num, setNum = '') => `${tier} Star (${num}) ${setNum.length > 0 ? setNum : ''}`,
+            COMMAND_GUILDSEARCH_FIELD_HEADER: (tier, num, setNum='') => `${tier} Star (${num}) ${setNum.length > 0 ? setNum : ''}`,
             COMMAND_GUILDSEARCH_NO_CHAR_STAR: (starLvl) => `No one in your guild seems to have this character at ${starLvl} stars.`,
             COMMAND_GUILDSEARCH_NO_CHAR: `No one in your guild seems to have this character.`,
             COMMAND_GUILDSEARCH_HELP: {
                 description: "Shows the star level of the selected character for everyone in the guild.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';guildsearch [user] <character> [-ships] [starLvl]',
-                    args: {
-                        "user": "The person you're adding. (me | userID | mention)",
-                        "character": "The character you want to search for.",
-                        "-ships": "Search for ships, you can use `-s, -ship, or -ships`",
-                        "starLvl": "Select the star level you want to see."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';guildsearch [user] <character> [-ships] [starLvl]',
+                        args: {
+                            "user": "The person you're adding. (me | userID | mention)",
+                            "character": "The character you want to search for.",
+                            "-ships": "Search for ships, you can use `-s, -ship, or -ships`",
+                            "starLvl": "Select the star level you want to see."
+                        }
                     }
-                }]
+                ]
             },
 
             // Heists Command
@@ -408,28 +433,32 @@ module.exports = class extends Language {
             COMMAND_HEISTS_NOT_SCHEDULED: "`Not scheduled`",
             COMMAND_HEISTS_HELP: {
                 description: "Shows any upcoming heists.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';heists',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';heists',
+                        args: {}
+                    }
+                ]
             },
-
+            
 
             // Help Command
             COMMAND_HELP_HEADER: (prefix) => `= Command List =\n\n[Use ${prefix}help <commandname> for details]\n`,
             COMMAND_HELP_OUTPUT: (command, prefix) => `= ${command.help.name} = \n${command.help.description} \nAliases:: ${command.conf.aliases.join(", ")}\nUsage:: ${prefix}${command.help.usage}`,
             COMMAND_HELP_HELP: {
                 description: "Displays info about available commands.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';help [command]',
-                    args: {
-                        "command": "The command you want to look up info on."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';help [command]',
+                        args: {
+                            "command": "The command you want to look up info on."
+                        }
                     }
-                }]
+                ]
             },
 
             // Info Command
@@ -444,12 +473,14 @@ module.exports = class extends Language {
             }),
             COMMAND_INFO_HELP: {
                 description: "Shows useful links pertaining to the bot.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'info',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'info',
+                        args: {}
+                    }
+                ]
             },
 
             // Mods Command
@@ -464,26 +495,30 @@ module.exports = class extends Language {
             COMMAND_NO_MODSETS: "No mod sets for this character",
             COMMAND_MODS_HELP: {
                 description: "Shows some suggested mods for the specified character.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'mods <character>',
-                    args: {
-                        "character": "The character you want to show the mods for"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'mods <character>',
+                        args: {
+                            "character": "The character you want to show the mods for"
+                        }
                     }
-                }]
+                ]
             },
 
             // Modsets command
             COMMAND_MODSETS_OUTPUT: `* Critical Chance:  2\n* Critical Damage:  4\n* Defense:  2\n* Health:   2\n* Offense:  4\n* Potency:  2\n* Speed:    4\n* Tenacity: 2`,
             COMMAND_MODSETS_HELP: {
                 description: "Shows how many of each kind of mod you need for a set.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'modsets',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'modsets',
+                        args: {}
+                    }
+                ]
             },
 
             // MyArena Command
@@ -495,14 +530,16 @@ module.exports = class extends Language {
             COMMAND_MYARENA_EMBED_FOOTER: (date) => `Arena data as of: ${date}`,
             COMMAND_MYARENA_HELP: {
                 description: "Show user's current arena ranks and their squads.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';myarena [user]',
-                    args: {
-                        "user": "The person you're checking. (me | userID | mention)"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';myarena [user]',
+                        args: {
+                            "user": "The person you're checking. (me | userID | mention)"
+                        }
                     }
-                }]
+                ]
             },
 
             // Nickname Command
@@ -511,14 +548,16 @@ module.exports = class extends Language {
             COMMAND_NICKNAME_TOO_LONG: 'Sorry, but a name can only contain up to 32 characters.',
             COMMAND_NICKNAME_HELP: {
                 description: "Меняет имя бота на сервере.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';nickname <name>',
-                    args: {
-                        "name": "The name you're wanting to change it to. Leave it blank to reset it to default."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';nickname <name>',
+                        args: {
+                            "name": "The name you're wanting to change it to. Leave it blank to reset it to default."
+                        }
                     }
-                }]
+                ]
             },
 
             // Polls Command
@@ -538,7 +577,8 @@ module.exports = class extends Language {
             COMMAND_POLL_CHOICE: (opt, optCount, choice) => `\`[${opt}]\` ${choice}: **${optCount} vote${optCount === 1 ? '' : 's'}**\n`,
             COMMAND_POLL_HELP: {
                 description: "Lets you start a poll with multiple options.",
-                actions: [{
+                actions: [
+                    {
                         action: "Create",
                         actionDesc: 'Create a new poll',
                         usage: ';poll create <question> | <opt1> | <opt2> | [...] | [opt10]',
@@ -569,7 +609,7 @@ module.exports = class extends Language {
                     }
                 ]
             },
-
+            
             // Raidteams Command
             COMMAND_RAIDTEAMS_INVALID_RAID: (prefix, help) => `Invalid raid, usage is \`${prefix}${help.usage}\`\n**Example:** \`${prefix}${help.example}\``,
             COMMAND_RAIDTEAMS_INVALID_PHASE: (prefix, help) => `Invalid phase, usage is \`${prefix}${help.usage}\`\n**Example:** \`${prefix}${help.example}\``,
@@ -585,29 +625,33 @@ module.exports = class extends Language {
             COMMAND_RAIDTEAMS_CODE_TEAMCHARS: (raidTeam, charList) => `### ${raidTeam} ### \n* Characters: ${charList}\n`,
             COMMAND_RAIDTEAMS_HELP: {
                 description: "Shows some teams that work well for each raid.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';raidteams <raid> <phase>',
-                    args: {
-                        "raid": "The raid that you want to see teams for. (aat|pit|sith)",
-                        "phase": "The phase of the raid you want to see. (p1|p2|p3|p4|solo)"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';raidteams <raid> <phase>',
+                        args: {
+                            "raid": "The raid that you want to see teams for. (aat|pit|sith)",
+                            "phase": "The phase of the raid you want to see. (p1|p2|p3|p4|solo)"
+                        }
                     }
-                }]
+                ]
             },
-
+            
             // Randomchar Command
             COMMAND_RANDOMCHAR_INVALID_NUM: (maxChar) => `Sorry, but you need a number from 1-${maxChar} there.`,
             COMMAND_RANDOMCHAR_HELP: {
                 description: "Picks up to 5 random characters to form a squad.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';randomchar [numberOfChars]',
-                    args: {
-                        "numberOfChars": "The number of characters that you want chosen"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';randomchar [numberOfChars]',
+                        args: {
+                            "numberOfChars": "The number of characters that you want chosen"
+                        }
                     }
-                }]
+                ]
             },
 
             // Register Command
@@ -621,7 +665,8 @@ module.exports = class extends Language {
             COMMAND_REGISTER_UPDATE_SUCCESS: (user) => `Profile updated for \`${user}\`.`,
             COMMAND_REGISTER_HELP: {
                 description: "Register your ally code to your Discord ID, and sync your SWGoH profile.",
-                actions: [{
+                actions: [
+                    {
                         action: "Add",
                         actionDesc: 'Link your Discord profile to a SWGoH account',
                         usage: ';register add <user> <allyCode>',
@@ -650,34 +695,38 @@ module.exports = class extends Language {
             },
 
 
-
+            
             // Reload Command
             COMMAND_RELOAD_INVALID_CMD: (cmd) => `I cannot find the command: ${cmd}`,
             COMMAND_RELOAD_SUCCESS: (cmd) => `Successfully reloaded: ${cmd}`,
             COMMAND_RELOAD_FAILURE: (cmd, stackTrace) => `Command reload failed: ${cmd}\n\`\`\`${stackTrace}\`\`\``,
             COMMAND_RELOAD_HELP: {
                 description: "Reloads the command file, if it's been updated or modified.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';reload <command>',
-                    args: {
-                        "command": "The command you're wanting to reload."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';reload <command>',
+                        args: {
+                            "command": "The command you're wanting to reload."
+                        }
                     }
-                }]
+                ]
             },
 
             // Reload Data Command
             COMMAND_RELOADDATA_HELP: {
                 description: "Reloads the selected file(s).",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';reloaddata <option>',
-                    args: {
-                        "option": "What you're wanting to reload ( commands | data | events | function )."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';reloaddata <option>',
+                        args: {
+                            "option": "What you're wanting to reload ( commands | data | events | function )."
+                        }
                     }
-                }]
+                ]
             },
 
             // Setconf Command
@@ -692,7 +741,7 @@ module.exports = class extends Language {
             COMMAND_SETCONF_ADMINROLE_SUCCESS: (roleName, action) => `The role ${roleName} has been ${action} your admin roles.`,
             COMMAND_SETCONF_WELCOME_NEED_CHAN: `Sorry, but but your announcement channel either isn't set or is no longer valid.\nGo set \`announceChan\` to a valid channel and try again.\``,
             COMMAND_SETCONF_TIMEZONE_NEED_ZONE: `Invalid timezone, look here https://en.wikipedia.org/wiki/List_of_tz_database_time_zones \nand find the one that you need, then enter what it says in the TZ column`,
-            COMMAND_SETCONF_ANNOUNCECHAN_NEED_CHAN: (chanName) => `Sorry, but I cannot find the channel ${chanName}. Please try again.`,
+            COMMAND_SETCONF_ANNOUNCECHAN_NEED_CHAN: (chanName) => `Sorry, but I cannot find the channel ${chanName}. Please try again.`,    
             COMMAND_SETCONF_ANNOUNCECHAN_NO_PERMS: `Sorry, but I don't have permission to send message there. Please either change the perms, or choose another channel.`,
             COMMAND_SETCONF_NO_KEY: (prefix) => `This key is not in the configuration. Look in "${prefix}showconf", or "${prefix}setconf help" for a list`,
             COMMAND_SETCONF_UPDATE_SUCCESS: (key, value) => `Guild configuration item ${key} has been changed to:\n\`${value}\``,
@@ -701,7 +750,8 @@ module.exports = class extends Language {
             COMMAND_SETCONF_RESET: `Your config has been reset`,
             COMMAND_SETCONF_HELP: {
                 description: "Используется для настройки бота",
-                actions: [{
+                actions: [
+                    {
                         action: "",
                         actionDesc: '',
                         usage: ';setconf <key> <value>',
@@ -712,7 +762,7 @@ module.exports = class extends Language {
                         actionDesc: 'The role that you want to be able to modify bot settings or set up events',
                         usage: ';setconf adminRole <add|remove> <role>',
                         args: {
-                            'add': 'Add a role to the list',
+                            'add':  'Add a role to the list',
                             'remove': 'Remove a role from the list'
                         }
                     },
@@ -727,7 +777,7 @@ module.exports = class extends Language {
                         actionDesc: 'The welcome message to send if you have it enabled (Special variables below)',
                         usage: ';setconf welcomeMessage <message>',
                         args: {
-                            '{{user}}': "gets replaced with the new user's name.",
+                            '{{user}}':  "gets replaced with the new user's name.",
                             '{{userMention}}': "makes it mention the new user there."
                         }
                     },
@@ -779,7 +829,8 @@ module.exports = class extends Language {
             COMMAND_SHARDTIMES_SHARD_HEADER: `Shard payouts in:`,
             COMMAND_SHARDTIMES_HELP: {
                 description: "Lists the time until the payouts of anyone registered.",
-                actions: [{
+                actions: [
+                    {
                         action: "Add",
                         actionDesc: 'Add a user to the shard tracker',
                         usage: ';shardtimes add <user> <timezone> [flag/emoji]',
@@ -817,56 +868,63 @@ module.exports = class extends Language {
             COMMAND_SHIPS_CODE_ABILITIES: (abilityName, abilities) => `### ${abilityName} ###\nAbility Type: ${abilities.type}   Ability Cooldown: ${abilities.abilityCooldown}\n${abilities.abilityDesc}\n\n`,
             COMMAND_SHIPS_HELP: {
                 description: "Shows info about the selected ship.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: 'ship <ship|pilot>',
-                    args: {
-                        "ship|pilot": "The ship or pilot for the ship you want info on."
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: 'ship <ship|pilot>',
+                        args: {
+                            "ship|pilot": "The ship or pilot for the ship you want info on."
+                        }
                     }
-                }]
+                ]
             },
 
             // Showconf Command
             COMMAND_SHOWCONF_OUTPUT: (configKeys, serverName) => `The following is the current configuration for ${serverName}: \`\`\`${configKeys}\`\`\``,
             COMMAND_SHOWCONF_HELP: {
                 description: "Показывает настройки сервера.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';showconf',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';showconf',
+                        args: {}
+                    }
+                ]
             },
 
             // Stats Command
             COMMAND_STATS_OUTPUT: (memUsage, cpuLoad, uptime, users, servers, channels, shardID) => `= STATISTICS (${shardID}) =\n
-• Mem Usage  :: ${memUsage} MB
-• CPU Load   :: ${cpuLoad}%
-• Uptime     :: ${uptime}
-• Users      :: ${users}
-• Servers    :: ${servers}
-• Channels   :: ${channels}
-• Source     :: https://github.com/jmiln/SWGoHBot`,
+• Память       :: ${memUsage} Мб
+• Загрузка ЦП  :: ${cpuLoad}%
+• Время работы :: ${uptime}
+• Пользователи :: ${users}
+• Сервера      :: ${servers}
+• Каналы       :: ${channels}`,
             COMMAND_STATS_HELP: {
                 description: "Показывает статистику бота.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';stats',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';stats',
+                        args: {}
+                    }
+                ]
             },
 
             // Test command (in .gitignore)
             COMMAND_TEST_HELP: {
                 description: "A command to test things out.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';test',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';test',
+                        args: {}
+                    }
+                ]
             },
 
             // Time Command
@@ -876,14 +934,16 @@ module.exports = class extends Language {
             COMMAND_TIME_WITH_ZONE: (time, zone) => `Current time is: ${time} in ${zone} time`,
             COMMAND_TIME_HELP: {
                 description: "Used to check the time with the guild's configured timezone.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';time [timezone]',
-                    args: {
-                        "timezone": "Optional if you want to see what time it is elsewhere"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';time [timezone]',
+                        args: {
+                            "timezone": "Optional if you want to see what time it is elsewhere"
+                        }
                     }
-                }]
+                ]
             },
 
             // Updatechar Command
@@ -892,27 +952,31 @@ module.exports = class extends Language {
             COMMAND_UPDATECHAR_WRONG_CHAR: (charName) => `Sorry, but your search for '${charName}' did not find any results. Please try again.`,
             COMMAND_UPDATECHAR_HELP: {
                 description: "Update the info on a specified character.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';updatechar [gear|info|mods] [charater]',
-                    args: {
-                        "gear": "Update the gear for the character.",
-                        "info": "Update the info for the character (Image link, abilities etc.)",
-                        "mods": "Update the mods from crouchingrancor.com"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';updatechar [gear|info|mods] [charater]',
+                        args: {
+                            "gear": "Update the gear for the character.",
+                            "info": "Update the info for the character (Image link, abilities etc.)",
+                            "mods": "Update the mods from crouchingrancor.com"
+                        }
                     }
-                }]
+                ]
             },
 
             // UpdateClient Command
             COMMAND_UPDATECLIENT_HELP: {
                 description: "Update the client for the SWGoHAPI.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';updateclient',
-                    args: {}
-                }]
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';updateclient',
+                        args: {}
+                    }
+                ]
             },
 
             // Zetas Command
@@ -921,15 +985,18 @@ module.exports = class extends Language {
             COMMAND_ZETA_OUT_DESC: `\`${'-'.repeat(30)}\`\n\`[L]\` Leader | \`[S]\` Special | \`[U]\` Unique\n\`${'-'.repeat(30)}\``,
             COMMAND_ZETAS_HELP: {
                 description: "Show the abilities that you have put zetas on.",
-                actions: [{
-                    action: "",
-                    actionDesc: '',
-                    usage: ';zeta [user]',
-                    args: {
-                        "user": "The person you're adding. (me | userID | mention)"
+                actions: [
+                    {
+                        action: "",
+                        actionDesc: '',
+                        usage: ';zeta [user]',
+                        args: {
+                            "user": "The person you're adding. (me | userID | mention)"
+                        }
                     }
-                }]
+                ]
             }
         };
     }
 };
+
