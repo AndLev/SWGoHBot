@@ -556,8 +556,10 @@ module.exports = (client) => {
     };
 
     // Get the ally code of someone that's registered
-    client.getAllyCode = async (message, user = 'me') => {
-        user = user.trim();
+    client.getAllyCode = async (message, user) => {
+        if (user) {
+            user = user.toString().trim();
+        }
         let uID, uAC;
         if (!user || user === 'me') {
             uID = message.author.id;
